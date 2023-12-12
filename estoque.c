@@ -63,72 +63,80 @@ int main()
                 printf("ESCOLHA UMA DAS ABAIXO\n\n");
             }
         } while (option[0] != 1 && option[0] != 2);
-        switch (option[0])
+        if (option[0] == 2)
         {
-        case 2:
-            system("cls || clear");
-            printf("\n1- %s", components[0].name);
-            printf("\n2- %s", components[1].name);
-            printf("\n3- %s", components[2].name);
-            printf("\n\nDigite: ");
-            scanf("%i", &option[1]);
-            break;
+            switch (option[0])
+            {
+            case 1:
+                // printf("reafimer sua escolha: ");
+                // scanf("%i",&option[0]);
+                break;
+            case 2:
+                system("cls || clear");
+                printf("\n1- %s", components[0].name);
+                printf("\n2- %s", components[1].name);
+                printf("\n3- %s", components[2].name);
+                printf("\n\nDigite: ");
+                scanf("%i", &option[1]);
+                break;
+            }
+            switch (option[1])
+            {
+            case 1:
+
+                system("cls || clear");
+                printf("\n1- ESTOCAR");
+                printf("\n2- RETIRAR");
+                printf("\n\nDigite: ");
+                scanf("%i", &components[0].select);
+                if (components[0].select == 1)
+                {
+                    stocksize[0] += stock(components);
+                }
+                if (components[0].select == 2)
+                {
+                    stocksize[0] -= stock(components);
+                }
+                break;
+            case 2:
+
+                system("cls || clear");
+                printf("\n1- ESTOCAR");
+                printf("\n2- RETIRAR");
+                printf("\n\nDigite: ");
+                scanf("%i", &components[0].select);
+                if (components[0].select == 1)
+                {
+                    stocksize[1] += stock(components);
+                }
+                if (components[0].select == 2)
+                {
+                    stocksize[1] -= stock(components);
+                }
+                break;
+            case 3:
+
+                system("cls || clear");
+                printf("\n1- ESTOCAR");
+                printf("\n2- RETIRAR");
+                printf("\n\nDigite: ");
+                scanf("%i", &components[0].select);
+                if (components[0].select == 1)
+                {
+                    stocksize[2] += stock(components);
+                }
+                if (components[0].select == 2)
+                {
+                    stocksize[2] -= stock(components);
+                }
+                break;
+            }
         }
-        switch (option[1])
-        {
-        case 1:
 
-            system("cls || clear");
-            printf("\n1- ESTOCAR");
-            printf("\n2- RETIRAR");
-            printf("\n\nDigite: ");
-            scanf("%i", &components[0].select);
-            if (components[0].select == 1)
-            {
-                stocksize[0] += stock(components);
-            }
-            if (components[0].select == 2)
-            {
-                stocksize[0] -= stock(components);
-            }
-            break;
-        case 2:
-
-            system("cls || clear");
-            printf("\n1- ESTOCAR");
-            printf("\n2- RETIRAR");
-            printf("\n\nDigite: ");
-            scanf("%i", &components[0].select);
-            if (components[0].select == 1)
-            {
-                stocksize[1] += stock(components);
-            }
-            if (components[0].select == 2)
-            {
-                stocksize[1] -= stock(components);
-            }
-            break;
-        case 3:
-
-            system("cls || clear");
-            printf("\n1- ESTOCAR");
-            printf("\n2- RETIRAR");
-            printf("\n\nDigite: ");
-            scanf("%i", &components[0].select);
-            if (components[0].select == 1)
-            {
-                stocksize[2] += stock(components);
-            }
-            if (components[0].select == 2)
-            {
-                stocksize[2] -= stock(components);
-            }
-            break;
-        }
     } while (option[0] != 1);
     system("clear || cls");
-    printf("o estoque de %s é: %i", components[0].name, stocksize[0]);
-    printf("\no estoque de %s é: %i", components[1].name, stocksize[1]);
-    printf("\no estoque de %s é: %i", components[2].name, stocksize[2]);
+    printf("\no estoque de %s Ã©: %i", components[0].name, stocksize[0]);
+    printf("\no estoque de %s Ã©: %i", components[1].name, stocksize[1]);
+    printf("\no estoque de %s Ã©: %i", components[2].name, stocksize[2]);
     return 0;
 }
