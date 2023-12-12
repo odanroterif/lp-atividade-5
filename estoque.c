@@ -68,8 +68,7 @@ int main()
             switch (option[0])
             {
             case 1:
-                // printf("reafimer sua escolha: ");
-                // scanf("%i",&option[0]);
+                
                 break;
             case 2:
                 system("cls || clear");
